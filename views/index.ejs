@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista de Tarefas</title>
+  <link rel="stylesheet" href="public/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Minha Lista de Tarefas</h1>
+    <form action="/add" method="POST">
+      <input type="text" name="name" placeholder="Nova Tarefa" required>
+      <button type="submit">Adicionar</button>
+    </form>
+    <ul>
+      <% tasks.forEach(task => { %>
+        <li class="<%= task.completed ? 'completed' : '' %>">
+          <%= task.name %>
+          <form action="/complete/<%= task._id %>" method="POST" style="display:inline;">
+            <button type="submit">✔️</button>
+          </form>
+          <form action="/delete/<%= task._id %>" method="POST" style="display:inline;">
+            <button type="submit">🗑️</button>
+          </form>
+        </li>
+      <% }) %>
+    </ul>
+  </div>
+</body>
+</html>
