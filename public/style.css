@@ -1,77 +1,77 @@
+/* Definindo um background fitness */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  background:url(/img/backgroun-listadetarefas.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+  color: #000;
+  font-family: Arial, sans-serif;
+
+  display: flex; /* Ativando o Flexbox */
+  align-items: center; /* Centralizando verticalmente */
+  justify-content: center; /* Centralizando horizontalmente */
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto; /* Para manter a centralização no eixo horizontal */
+  padding: 20px;
+  border: 5px solid #ff5722; /* Borda sólida */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  animation: borderPulse 1s infinite alternate; /* Adicionando animação */
+}
+
+/* Adicionando a animação da borda */
+@keyframes borderPulse {
+  from {
+      border-color: #ff5722;
   }
-  
-  .container {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    width: 300px;
+  to {
+      border-color: #ff8c00; /* Mudança de cor da borda */
   }
-  
-  h1 {
-    text-align: center;
-    color: #333;
+}
+
+/* Borda piscante */
+@keyframes borderPulse {
+  0% {
+      border-color: #ff5722; /* Cor inicial */
   }
-  
-  form {
-    display: flex;
-    margin-bottom: 20px;
+  100% {
+      border-color: #ffcc00; /* Cor final */
   }
-  
-  input {
-    flex: 1;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
-  }
-  
-  button {
-    padding: 8px;
-    border: none;
-    background: #28a745;
-    color: #fff;
-    cursor: pointer;
-    border-radius: 0 4px 4px 0;
-  }
-  
-  button:hover {
-    background: #218838;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  li {
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
-    background: #f9f9f9;
-    margin-bottom: 5px;
-    border-radius: 4px;
-  }
-  
-  li.completed {
-    text-decoration: line-through;
-    color: #888;
-  }
-  
-  li form button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  li form button:hover {
-    opacity: 0.7;
-  }
-  
+}
+
+/* Estilizando a lista */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.1); /* Fundo transparente */
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button {
+  background-color: #ff5722; /* Cor do botão */
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffcc00; /* Cor do botão ao passar o mouse */
+}
+
+.completed {
+  text-decoration: line-through; /* Riscar tarefa completada */
+  color: #ccc; /* Cor da tarefa completada */
+}
