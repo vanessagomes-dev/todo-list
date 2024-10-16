@@ -4,43 +4,43 @@ body {
   background: url('/img/background-animated.gif') no-repeat center center fixed;
   background-size: cover;
   color: #000;
-  font-family: Arial, sans-serif;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-/* Ajuste do container da lista de tarefas */
 .container {
-  max-width: 700px; /* Diminuindo a largura */
-  margin: 40px 40px; /* Ajustando a posição para a esquerda e afastando do topo */
-  padding: 10px;
-  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente */
-  border: 2px solid #ffcc00; /* Ajustando a cor da borda */
-  border-radius: 15px; /* Bordas mais arredondadas */
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra suave */
-  margin-left: 50px; /* Coloca o container mais à esquerda */
+  max-width: 500px; 
+  width: 90%; 
+  margin: 100px;
+  padding: 20px; 
+  background-color: rgba(255, 255, 255, 0.8); 
+  border: 2px solid #ffcc00; 
+  border-radius: 15px; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   position: relative;
+  margin-left: 50px;
 }
 
 h1 {
-  font-family: 'Gloria Hallelujah', cursive; /* Fonte manuscrita que combina com anotações */
+  font-family: 'Gloria Hallelujah', cursive; 
   font-size: 2.5em;
-  color: #004aad; /* Cor principal para o título */
+  color: #004aad; 
   text-align: center;
   margin-bottom: 20px;
   position: relative;
-  animation: shadowPulse 2s infinite alternate; /* Animação para sombra */
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
+  animation: shadowPulse 2s infinite alternate; 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); 
 }
 
 /* Animação da sombra do h1 */
 @keyframes shadowPulse {
   0% {
-    text-shadow: 2px 2px 8px #004aad; /* Sombra azul */
+    text-shadow: 2px 2px 8px #004aad; 
   }
   50% {
-    text-shadow: 2px 2px 8px #c1ff72; /* Sombra verde neon */
+    text-shadow: 2px 2px 8px #c1ff72;
   }
   100% {
-    text-shadow: 2px 2px 8px #ff8c00; /* Sombra laranja para mais destaque */
+    text-shadow: 2px 2px 8px #ff8c00; 
   }
 }
 
@@ -51,45 +51,45 @@ ul {
 }
 
 li {
-  background: rgba(255, 255, 255, 0.9); /* Fundo branco semitransparente */
+  background: rgba(255, 255, 255, 0.9); 
   padding: 15px;
   margin: 10px 0;
   border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 2px solid #004aad; /* Cor que combina com o fundo */
+  border: 2px solid #004aad; 
 }
 
 /* Estilo dos botões */
 button {
-  margin-left: 10px; /* Espaçamento entre os botões */
-  background-color: #ffaff9; /* Cor de fundo dos botões */
-  color: white; /* Cor do texto dos botões */
-  border: none; /* Remove a borda padrão */
-  border-radius: 5px; /* Borda arredondada */
-  padding: 8px 12px; /* Espaçamento interno */
-  cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+  margin-left: 10px;
+  background-color: #ffaff9; 
+  color: white; 
+  border: none; 
+  border-radius: 5px; 
+  padding: 8px 12px; 
+  cursor: pointer; 
 }
 
 /* Estilo para o botão de adicionar tarefa */
 button.submit-button {
-  background-color: #004aad; /* Cor de fundo mais clara */
+  background-color: #004aad;
 }
 
 /* Efeito ao passar o mouse sobre os botões */
 button:hover {
-  background-color: #004aad; /* Cor de fundo ao passar o mouse */
+  background-color: #004bad61; 
 }
 
 /* Estilizando o campo de input */
 input[type="text"] {
   padding: 10px;
   font-size: 16px;
-  border: 2px solid #004aad; /* Cor que combina com a borda */
+  border: 2px solid #004aad; 
   border-radius: 5px;
-  width: 80%; /* Para que o botão "Adicionar" caiba ao lado */
-  margin-right: 10px; /* Espaçamento do botão */
+  width: 70%; 
+  margin-right: 10px; 
 }
 
 /* Efeito de riscar tarefa completada */
@@ -99,48 +99,56 @@ input[type="text"] {
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
-    max-width: 90%; /* Largura maior para telas menores */
-    margin: 20px auto; /* Centralizando */
+    width: 90%; 
+    margin: 20px auto;
+  }
+  body {
+    background: linear-gradient(90deg, #fff7ad, #ffa9f9); 
   }
 
   h1 {
-    font-size: 2em; /* Diminuindo o tamanho do título */
+    font-size: 2em; 
   }
 
   li {
-    flex-direction: column; /* Alinhamento em coluna */
-    align-items: flex-start; /* Alinhando à esquerda */
+    flex-direction: column; 
+    align-items: flex-start; 
   }
 
   button {
-    width: 100%; /* Botões ocupando toda a largura */
-    margin-left: 0; /* Removendo a margem esquerda */
-    margin-top: 5px; /* Margem acima dos botões */
+    width: 100%; 
+    margin-left: 0; 
+    margin-top: 5px; 
   }
 
   input[type="text"] {
-    width: 100%; /* Input ocupando toda a largura */
-    margin-right: 0; /* Removendo a margem à direita */
-    margin-bottom: 10px; /* Espaço abaixo do input */
+    width: 95%;
+    margin-right: 0; 
+    margin-bottom: 10px; 
   }
 }
 
-@media (max-width: 480px) {
+
+@media (max-width: 600px) {
+  body {
+    background: linear-gradient(90deg, #fff7ad, #ffa9f9); 
+  }
+
   h1 {
-    font-size: 1.5em; /* Diminuindo ainda mais o tamanho do título */
+    font-size: 1.5em; 
   }
 
   li {
-    padding: 10px; /* Diminuindo o padding dos itens da lista */
+    padding: 10px; 
   }
 
   button {
-    padding: 6px 10px; /* Diminuindo o padding dos botões */
+    padding: 6px 10px; 
   }
 
   input[type="text"] {
-    padding: 8px; /* Diminuindo o padding do input */
+    padding: 8px; 
   }
 }
