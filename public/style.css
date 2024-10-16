@@ -1,41 +1,46 @@
-/* Definindo um background fitness */
+@import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
 body {
-  background:url(/img/backgroun-listadetarefas.png);
+  background: url('/img/background-animated.gif') no-repeat center center fixed;
+  background-size: cover;
   color: #000;
   font-family: Arial, sans-serif;
-
-  display: flex; /* Ativando o Flexbox */
-  align-items: center; /* Centralizando verticalmente */
-  justify-content: center; /* Centralizando horizontalmente */
 }
 
+/* Ajuste do container da lista de tarefas */
 .container {
-  max-width: 600px;
-  margin: 0 auto; /* Para manter a centralização no eixo horizontal */
-  padding: 20px;
-  border: 5px solid #ff5722; /* Borda sólida */
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  animation: borderPulse 1s infinite alternate; /* Adicionando animação */
+  max-width: 700px; /* Diminuindo a largura */
+  margin: 40px 40px; /* Ajustando a posição para a esquerda e afastando do topo */
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.8); /* Fundo branco semitransparente */
+  border: 2px solid #ffcc00; /* Ajustando a cor da borda */
+  border-radius: 15px; /* Bordas mais arredondadas */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra suave */
+  margin-left: 50px; /* Coloca o container mais à esquerda */
+  position: relative;
 }
 
-/* Adicionando a animação da borda */
-@keyframes borderPulse {
-  from {
-      border-color: #ff5722;
-  }
-  to {
-      border-color: #ff8c00; /* Mudança de cor da borda */
-  }
+h1 {
+  font-family: 'Gloria Hallelujah', cursive; /* Fonte manuscrita que combina com anotações */
+  font-size: 2.5em;
+  color: #004aad; /* Cor principal para o título */
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+  animation: shadowPulse 2s infinite alternate; /* Animação para sombra */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Sombra leve */
 }
 
-/* Borda piscante */
-@keyframes borderPulse {
+/* Animação da sombra do h1 */
+@keyframes shadowPulse {
   0% {
-      border-color: #ff5722; /* Cor inicial */
+    text-shadow: 2px 2px 8px #004aad; /* Sombra azul */
+  }
+  50% {
+    text-shadow: 2px 2px 8px #c1ff72; /* Sombra verde neon */
   }
   100% {
-      border-color: #ffcc00; /* Cor final */
+    text-shadow: 2px 2px 8px #ff8c00; /* Sombra laranja para mais destaque */
   }
 }
 
@@ -46,29 +51,96 @@ ul {
 }
 
 li {
-  background: rgba(255, 255, 255, 0.1); /* Fundo transparente */
-  padding: 10px;
+  background: rgba(255, 255, 255, 0.9); /* Fundo branco semitransparente */
+  padding: 15px;
   margin: 10px 0;
-  border-radius: 5px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 2px solid #004aad; /* Cor que combina com o fundo */
 }
 
+/* Estilo dos botões */
 button {
-  background-color: #ff5722; /* Cor do botão */
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
+  margin-left: 10px; /* Espaçamento entre os botões */
+  background-color: #ffaff9; /* Cor de fundo dos botões */
+  color: white; /* Cor do texto dos botões */
+  border: none; /* Remove a borda padrão */
+  border-radius: 5px; /* Borda arredondada */
+  padding: 8px 12px; /* Espaçamento interno */
+  cursor: pointer; /* Muda o cursor ao passar sobre o botão */
 }
 
+/* Estilo para o botão de adicionar tarefa */
+button.submit-button {
+  background-color: #004aad; /* Cor de fundo mais clara */
+}
+
+/* Efeito ao passar o mouse sobre os botões */
 button:hover {
-  background-color: #ffcc00; /* Cor do botão ao passar o mouse */
+  background-color: #004aad; /* Cor de fundo ao passar o mouse */
 }
 
+/* Estilizando o campo de input */
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #004aad; /* Cor que combina com a borda */
+  border-radius: 5px;
+  width: 80%; /* Para que o botão "Adicionar" caiba ao lado */
+  margin-right: 10px; /* Espaçamento do botão */
+}
+
+/* Efeito de riscar tarefa completada */
 .completed {
-  text-decoration: line-through; /* Riscar tarefa completada */
-  color: #ccc; /* Cor da tarefa completada */
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%; /* Largura maior para telas menores */
+    margin: 20px auto; /* Centralizando */
+  }
+
+  h1 {
+    font-size: 2em; /* Diminuindo o tamanho do título */
+  }
+
+  li {
+    flex-direction: column; /* Alinhamento em coluna */
+    align-items: flex-start; /* Alinhando à esquerda */
+  }
+
+  button {
+    width: 100%; /* Botões ocupando toda a largura */
+    margin-left: 0; /* Removendo a margem esquerda */
+    margin-top: 5px; /* Margem acima dos botões */
+  }
+
+  input[type="text"] {
+    width: 100%; /* Input ocupando toda a largura */
+    margin-right: 0; /* Removendo a margem à direita */
+    margin-bottom: 10px; /* Espaço abaixo do input */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5em; /* Diminuindo ainda mais o tamanho do título */
+  }
+
+  li {
+    padding: 10px; /* Diminuindo o padding dos itens da lista */
+  }
+
+  button {
+    padding: 6px 10px; /* Diminuindo o padding dos botões */
+  }
+
+  input[type="text"] {
+    padding: 8px; /* Diminuindo o padding do input */
+  }
 }
