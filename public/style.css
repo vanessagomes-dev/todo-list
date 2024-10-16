@@ -1,9 +1,6 @@
 /* Definindo um background fitness */
 body {
   background:url(/img/backgroun-listadetarefas.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100vh; /* Garante que o body ocupe toda a altura da janela */
   color: #000;
   font-family: Arial, sans-serif;
 
